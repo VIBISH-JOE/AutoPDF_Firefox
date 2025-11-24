@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Auto PDF Downloader (Examly) - Firefox",
+  "version": "1.0",
+  "description": "Automatically downloads protected PDFs and adds a Download PDF button.",
+  "permissions": [
+    "downloads",
+    "*://placement.skcet.ac.in/*",
+    "*://*.s3.amazonaws.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://placement.skcet.ac.in/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
